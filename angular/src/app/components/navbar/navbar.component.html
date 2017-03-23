@@ -1,0 +1,65 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container"> 
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+            </button>
+            <a routerLink="/" class="navbar-brand">Innominds</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active"><a routerLink="/">Home</a></li>
+                <li routerLinkActive="active"><a routerLink="/profile">Profile</a></li>
+                 <li routerLinkActive="active" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">DropDown
+                    <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li routerLinkActive="active"><a routerLink="*">Link 1</a></li>
+                    </ul>
+                 </li>              
+             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <strong>Vinaykumar</strong>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="navbar-login">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p class="text-center">
+                                            <span class="glyphicon glyphicon-user icon-size"></span>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p class="text-left"><strong>Vinaykumar</strong></p>
+                                        <p class="text-left small">vinaykumar0459@gmail.com</p>
+                                        <p class="text-left">
+                                            <a routerLink="/profile" class="btn btn-primary btn-block btn-sm">Profile</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider navbar-login-session-bg"></li>
+                         <li routerLinkActive="active"><a routerLink="*">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li routerLinkActive="active"><a routerLink="*">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li routerLinkActive="active"><a routerLink="*">Messages <span class="badge pull-right"> 42 </span></a></li>
+            <li class="divider"></li>
+            <li routerLinkActive="active"><a routerLink="*">Favourites Snippets <span class="glyphicon glyphicon-heart pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li routerLinkActive="active"><a routerLink="/logout">Log Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
