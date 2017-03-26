@@ -1,3 +1,79 @@
-<p>
-  register works!
-</p>
+ <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info">
+          <div class="panel-heading">
+              <div class="panel-title">Sign Up</div>
+              <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+          </div>  
+          <div class="panel-body" >
+              <form id="signupform" class="form-horizontal" role="form" method="POST" > 
+                  <div class="form-group">
+                      <label for="name" class="col-md-4 control-label">Name</label>
+                      <div class="col-md-8">
+                          <input type="text" [(ngModel)]="User.name" #name="ngModel" minlength="4" maxlength="15" pattern="^[a-zA-Z\s]+$"class="form-control" name="User.name" placeholder="Enter your name">
+                          <div *ngIf="name.errors && (name.dirty || name.touched)" class="error">
+                              <!--<span [hidden]="!name.errors">Please Enter your name</span>-->
+                              <p [hidden]="!name.errors.minlength">Name atleast should be 4 Characters</p>
+                              <p [hidden]="!name.errors.maxlength">Name should not exceed 15 Characters</p>
+                              <p [hidden]="!name.errors.pattern">Name should be alphabets</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="username" class="col-md-4 control-label">Username</label>
+                      <div class="col-md-8">
+                          <input type="text" #username="ngModel" minlength="8" maxlength="20" [(ngModel)]="User.username"  class="form-control" name="username" placeholder="Enter your username">
+                          <div *ngIf="username.errors && (username.dirty || username.touched)" class="error">
+                              <!--<span [hidden]="!name.errors">Please Enter your name</span>-->
+                              <p [hidden]="!username.errors.minlength">Username should be 8 Characters</p>
+                              <p [hidden]="!username.errors.maxlength">Username should not exceed 20 Characters</p>
+                              <!--<p [hidden]="!username.errors.pattern">Name should be alphabets</p>-->
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="email" class="col-md-4 control-label">Email</label>
+                      <div class="col-md-8">
+                          <input type="text" #email="ngModel" [(ngModel)]="User.email"  class="form-control" name="email" placeholder="Enter your Email Address">
+                          <div *ngIf="email.errors && (email.dirty || email.touched)" class="error">
+                              <span [hidden]="!name.errors">Please Enter your name</span>
+                              <!--<p [hidden]="!email.errors.minlength">Username should be 8 Characters</p>
+                              <p [hidden]="!email.errors.maxlength">Username should not exceed 20 Characters</p>-->
+                              <p [hidden]="!email.errors.pattern">Email should be like this 'vinaykumar@gmail.com'</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="password" class="col-md-4 control-label">Create Password</label>
+                      <div class="col-md-8">
+                          <input type="text" [(ngModel)]="User.password"  class="form-control" name="password" placeholder="Create Password">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="confirmpassword" class="col-md-4 control-label">Confirm Password</label>
+                      <div class="col-md-8">
+                          <input type="text" [(ngModel)]="User.confirmpassword"  class="form-control" name="confirmpassword" placeholder="Confirm Password">
+                      </div>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="password" class="col-md-4 control-label">Gender</label>
+                      <div class="radio col-md-2">
+                        <label><input type="radio" [(ngModel)]="User.gender" name="gender" value="Male" #gender="ngModel">Male</label>
+                      </div>
+                      <div class="radio col-md-2">
+                        <label><input type="radio" [(ngModel)]="User.gender" name="gender" value="Female" #gender="ngModel">Female</label>
+                      </div>
+                  </div>          
+                 <br>
+                  <div class="form-group">
+                      <!-- Button -->                                        
+                      <div class="col-md-offset-3 col-md-9">
+                          <button id="btn-signup" type="button" (click)="registerform(User)" class="btn btn-info"><i class="icon-hand-right"></i> Sign Up</button>
+                           
+                      </div>
+                  </div>
+                 
+              </form>
+            </div>
+      </div>            
+</div> 
